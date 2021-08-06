@@ -1,0 +1,5 @@
+node_modules/
+*.pub
+*.env
+*.DS_Store
+id
