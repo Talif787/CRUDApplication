@@ -1,3 +1,4 @@
+const baseUrl = process.env.baseURL || "http://localhost:9090";
 $("#update_user").submit(function (event) {
   event.preventDefault();
   var unindexed_array = $(this).serializeArray();
@@ -9,14 +10,14 @@ $("#update_user").submit(function (event) {
   console.log(data);
 
   var request = {
-    url: `http://localhost:9090/api/user/${data.id}`,
+    url: `${baseUrl}/api/user/${data.id}`,
     method: "PUT",
     data: data,
   };
 
   $.ajax(request).done(function (response) {
     console.log(response);
-    window.location = "http://localhost:9090/";
+    window.location = `${baseUrl}`;
   });
 });
 
@@ -26,7 +27,7 @@ if (window.location.pathname == "/") {
     var id = $(this).attr("data-id");
 
     var request = {
-      url: `http://localhost:9090/api/user/${id}`,
+      url: `${baseUrl}/api/user/${id}`,
       method: "DELETE",
     };
 
