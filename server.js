@@ -12,6 +12,11 @@ const port = process.env.PORT || 7000;
 
 mongodb();
 
+app.use((req,res,next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+})
+
 app.use(express.urlencoded({ extended: true }));
 
 app.use(morgan("tiny"));
