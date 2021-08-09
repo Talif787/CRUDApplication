@@ -1,5 +1,5 @@
-node_modules/
-*.pub
-*.env
-*.DS_Store
+/node_modules
+/*.pub
+/*.env
+.DS_Store
 id
