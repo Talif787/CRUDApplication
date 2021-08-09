@@ -8,7 +8,7 @@ const mongodb = require("./server/database/connection");
 
 dotenv.config({ path: "config.env" });
 
-const PORT = process.env.PORT || 7000;
+const port = process.env.PORT || 7000;
 
 mongodb();
 
@@ -39,6 +39,6 @@ app.use("/js", express.static(path.join(__dirname, "assets", "js")));
 
 app.use('/',router);
 
-app.listen(PORT, () => {
-  console.log(`Listening at the port: ${PORT}`);
+app.listen(port, () => {
+  console.log(`Listening at the port: ${port}`);
 });
