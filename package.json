@@ -8,6 +8,9 @@
     "start": "node server.js",
     "dev": "npx nodemon server.js -e ejs,js,html,css"
   },
+  "engines": {
+    "node": "14.17.0"
+  },
   "keywords": [
     "crud",
     "mongodb",
