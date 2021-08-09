@@ -1,1 +1,1 @@
-web: nodemon server.js -e ejs,js,html,css
+web: node server.js
