@@ -5,7 +5,7 @@ const services = require("../services/render")
 const controller = require("../controllers/controller");
 console.log(services);
 
-router.get("/home", services.homeRoutes);
+router.get("/", services.homeRoutes);
 router.get("/add-user", services.add_user);
 router.get("/update-user", services.update_user);
 // router.get("/delete-user", services.delete_user);

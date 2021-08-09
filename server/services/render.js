@@ -1,8 +1,9 @@
 const axios = require("axios");
+const baseUrl = process.env.baseURL || "http://localhost:9090"
 
 exports.homeRoutes = (req, res) => {
   axios
-    .get("http://localhost:9090/api/users")
+    .get(`${baseUrl}/api/users`)
     .then((response) => {
       res.render("index", { users: response.data });
     })
@@ -18,7 +19,7 @@ exports.add_user = (req, res) => {
 
 exports.update_user = (req, res) => {
   axios
-    .get("http://localhost:9090/api/users/", {params : {id: req.query.id}})
+    .get(`${baseUrl}/api/users`, {params : {id: req.query.id}})
     .then((response) => {
       res.render("update_user", { user: response.data });
     })
